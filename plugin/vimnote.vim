@@ -2,8 +2,10 @@
 " Author: https://github.com/d0iasm
 " Description:
 
-scriptencoding utf-8
+pyfile <sfile>:h/src/hello.py
 
-echo 'Hello, vim!1'
-echo 'Hello, vim!2'
-echo 'Hello, vim!3'
+python import vim
+
+function! s:hello()
+  python hello()
+endfunction
