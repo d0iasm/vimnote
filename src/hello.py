@@ -1,3 +1,5 @@
+import vim
+
 class Hello:
     def hello(self, name):
         print('hello ' + name)
