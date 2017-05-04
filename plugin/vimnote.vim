@@ -2,10 +2,6 @@
 " Author: https://github.com/d0iasm
 " Description:
 
-pyfile <sfile>:h/src/hello.py
+scriptencoding utf-8
 
-python import vim
-
-function! s:hello()
-  python hello()
-endfunction
+command! -nargs=1 MyNameIs call hello()
