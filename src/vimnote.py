@@ -1,3 +1,5 @@
+import sys
+
 from evernote.api.client import EvernoteClient
 import evernote.edam.type.ttypes as Types
 
@@ -40,4 +42,8 @@ class Vimnote(object):
 if __name__ == '__main__':
     vimnote = Vimnote.getInstance()
     print(vimnote)
+    i = 0
+    while i < len(sys.argv):
+        print("argument " + str(i + 1) + " is " + sys.argv[i])
+        i += 1
     # vimnote.send('testTitle', 'testContent')
