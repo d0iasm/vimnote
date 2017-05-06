@@ -13,13 +13,15 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
+let inputtext = input('Your name? ', 'defalut')
+echo 'name is ' . inputtext
 
 pyfile <sfile>:h:h/src/vimnote.py
 
 python import vim
 
 function! s:vimnote()
-  python 
+  python
 endfunction
 
 
