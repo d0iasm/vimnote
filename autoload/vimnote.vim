@@ -13,12 +13,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-pyfile <sfile>:h:h/src/hello.py
+
+pyfile <sfile>:h:h/src/vimnote.py
 
 python import vim
 
-function! s:hello()
-  python hello()
+function! s:vimnote()
+  python 
 endfunction
 
 
