@@ -13,25 +13,18 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-" let inputtext = input('Your name? ', 'defalut')
-" echo 'name is ' . inputtext
-
 " pyfile <sfile>:h:h/src/vimnote.py
 
 " python import vim
 
-function! s:vimnote()
-  python << EOF
-  import vim
-  print('vimnote func!')
-  EOF
+function! s:sendPython()
+  let inputtext = input('Your name? ', 'defalut')
+  " python print "arg is " + vim.eval("arg")
+  " python sys.argv = ('l:inputtext', 'l:inputtext')
+  pyfile <sfile>:h:h/src/vimnote.py
 endfunction
 
-
-" python import sys
-" python sys.argv = ('hoge', 'hoge2', 'hoge3')
-" pyfile <sfile>:h:h/src/vimnote.py
-
+call s:sendPython()
 
 
 let &cpo = s:save_cpo
