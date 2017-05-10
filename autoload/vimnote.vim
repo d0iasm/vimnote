@@ -17,14 +17,12 @@ set cpo&vim
 
 " python import vim
 
-function! s:sendPython()
-  let token = input('Your dev_token? ', 'defalut')
-  " python print "arg is " + vim.eval("arg")
-  " python sys.argv = ('l:inputtext', 'l:inputtext')
+function! s:setEvernoteClient()
+  let token = input('Your dev_token? ', 'Get "Developer Tokens" from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
-call s:sendPython()
+call s:setEvernoteClient()
 
 
 let &cpo = s:save_cpo

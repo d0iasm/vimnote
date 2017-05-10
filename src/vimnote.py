@@ -1,22 +1,10 @@
 import sys
-import vim
 
 from evernote.api.client import EvernoteClient
 import evernote.edam.type.ttypes as Types
 
 import setting
 
-
-# dev_token = "put your dev token here"
-# client = EvernoteClient(token=dev_token)
-# userStore = client.get_user_store()
-# user = userStore.getUser()
-# print(user.username)
-#
-# noteStore = client.get_note_store()
-# notebooks = noteStore.listNotebooks()
-# for n in notebooks:
-#     print(n.name)
 
 class Vimnote(object):
     _instance = None
@@ -31,7 +19,7 @@ class Vimnote(object):
 
         return self._instance
 
-    def send(self, title, content):
+    def sendNote(self, title, content):
         client = Setting.getClient()
         noteStore = client.get_note_store()
         note = Types.Note()
@@ -46,4 +34,15 @@ class Vimnote(object):
 if __name__ == '__main__':
     vimnote = Vimnote.getInstance()
     print(vimnote)
-    print("input is " + vim.eval("inputtext"))
+    # print("input is " + vim.eval("inputtext"))
+
+    dev_token = "put your dev token here"
+    client = EvernoteClient(token=dev_token)
+    userStore = client.get_user_store()
+    user = userStore.getUser()
+    print(user.username)
+
+    noteStore = client.get_note_store()
+    notebooks = noteStore.listNotebooks()
+    for n in notebooks:
+        print(n.name)
