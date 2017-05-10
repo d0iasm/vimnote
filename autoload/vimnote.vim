@@ -18,10 +18,10 @@ set cpo&vim
 " python import vim
 
 function! s:sendPython()
-  let inputtext = input('Your name? ', 'defalut')
+  let token = input('Your dev_token? ', 'defalut')
   " python print "arg is " + vim.eval("arg")
   " python sys.argv = ('l:inputtext', 'l:inputtext')
-  pyfile <sfile>:h:h/src/vimnote.py
+  pyfile <sfile>:h:h/src/setting.py
 endfunction
 
 call s:sendPython()
