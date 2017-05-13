@@ -2,6 +2,10 @@
 " Author: https://github.com/d0iasm
 " Description:
 
-scriptencoding utf-8
+let s:save_cpo = &cpo
+set cpo&vim
 
-command! -nargs=1 MyNameIs call hello()
+command! VimnoteSend call vimnote#send()
+
+let &cpo = s:save_cpo
+unlet s:save_cpo

@@ -16,12 +16,12 @@ if !exists("g:token")
   call s:setEvernoteClient()
 endif
 
-function! vimnote#set_evernote_client() abort
+function! set_evernote_client() abort
   let g:token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
-function! vimnote#send() abort
+function! send() abort
   python Vimnote.getInstance().sendNote()
 endfunction
 
