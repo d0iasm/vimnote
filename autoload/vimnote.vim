@@ -2,6 +2,9 @@
 " Author: https://github.com/d0iasm
 " Description:
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 scriptencoding utf-8
 
 if exists("g:loaded_vimnote")
@@ -9,21 +12,18 @@ if exists("g:loaded_vimnote")
 endif
 let g:loaded_vimnote = 1
 
-let s:save_cpo = &cpo
-set cpo&vim
+if !exists("g:token")
+  call s:setEvernoteClient()
+endif
 
-
-" pyfile <sfile>:h:h/src/vimnote.py
-
-" python import vim
-
-function! s:setEvernoteClient()
-  let token = input('Your dev_token? ', 'Get "Developer Tokens" from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
+function! vimnote#set_evernote_client() abort
+  let g:token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
-call s:setEvernoteClient()
-
+function! vimnote#send() abort
+  python Vimnote.getInstance().sendNote()
+endfunction
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
