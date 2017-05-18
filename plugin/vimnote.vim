@@ -1,6 +1,6 @@
 " File: plugin/vimnote.vim
 " Author: https://github.com/d0iasm
-" Description:
+" Description: send to Evernote from vim
 
 let s:save_cpo = &cpo
 set cpo&vim

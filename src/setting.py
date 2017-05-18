@@ -9,7 +9,7 @@ class Setting(object):
     _client = None
 
     def __init__(self):
-        self._dev_token = vim.eval("token")
+        self._dev_token = vim.eval("evernote_dev_token")
 
     @classmethod
     def getClient(self):

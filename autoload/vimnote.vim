@@ -1,6 +1,6 @@
 " File: plugin/vimnote.vim
 " Author: https://github.com/d0iasm
-" Description:
+" Description: send to Evernote from vim
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -12,16 +12,15 @@ if exists("g:loaded_vimnote")
 endif
 let g:loaded_vimnote = 1
 
-if !exists("g:token")
-  call s:setEvernoteClient()
-endif
-
 function! set_evernote_client() abort
-  let g:token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
+  let g:evernote_dev_token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
 function! send() abort
+  if !exists("g:evernote_dev_token")
+    call s:setEvernoteClient()
+  endif
   python Vimnote.getInstance().sendNote()
 endfunction
 
