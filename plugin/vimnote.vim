@@ -5,7 +5,7 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! VimnoteSend call vimnote#send()
+command! -nargs=0 VimnoteSend :call vimnote#send()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
