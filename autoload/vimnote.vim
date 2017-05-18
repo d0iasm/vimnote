@@ -19,7 +19,7 @@ endfunction
 
 function! vimnote#send() abort
   if !exists("g:evernote_dev_token")
-    call s:setEvernoteClient()
+    call s:set_evernote_client()
   endif
   pyfile <sfile>:h:h/src/vimnote.py
 endfunction
