@@ -38,9 +38,10 @@ class Vimnote(object):
         note.title = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
         note.content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">'
         note.content += '<en-note>'
-        for buffer in vim.buffers:
-            for i in buffer:
-                note.content += i
+        # for buffer in vim.buffers:
+        #     for i in buffer:
+        #         note.content += i
+        note.content += 'test'
         note.content += '</en-note>'
         note = noteStore.createNote(note)
 
