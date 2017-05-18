@@ -12,14 +12,14 @@ if !exists("g:loaded_vimnote")
 endif
 let g:loaded_vimnote = 1
 
-function! vimnote#set_evernote_client() abort
+function! s:set_evernote_client() abort
   let g:evernote_dev_token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
 function! vimnote#send() abort
   if !exists("g:evernote_dev_token")
-    call vimnote#setEvernoteClient()
+    call s:setEvernoteClient()
   endif
   pyfile <sfile>:h:h/src/vimnote.py
 endfunction
