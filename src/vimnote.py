@@ -25,7 +25,7 @@ class Vimnote(object):
 
     def getClient(self):
         if self._client is None:
-            self._dev_token = vim.eval("evernote_dev_token")
+            self._dev_token = vim.eval("g:evernote_dev_token")
             self._client = EvernoteClient(token=self._dev_token)
 
         return self._client
