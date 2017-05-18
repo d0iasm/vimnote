@@ -17,7 +17,3 @@ class Setting(object):
             self._client = EvernoteClient(token=self._dev_token)
 
         return self._client
-
-
-if __name__ == '__main__':
-    print('setting called')
