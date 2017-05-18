@@ -19,7 +19,8 @@ endfunction
 
 function! vimnote#send() abort
   if !exists("g:evernote_dev_token")
-    call s:set_evernote_client()
+    " call s:set_evernote_client()
+    let g:evernote_dev_token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   endif
   pyfile <sfile>:h:h/src/vimnote.py
 endfunction
