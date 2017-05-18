@@ -31,7 +31,7 @@ class Vimnote(object):
         return self._client
 
     def sendNote(self):
-        client = getClient()
+        client = self.getClient()
         # client = Setting.getClient()
         noteStore = client.get_note_store()
         note = Types.Note()
