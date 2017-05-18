@@ -5,7 +5,7 @@ from datetime import datetime
 from evernote.api.client import EvernoteClient
 import evernote.edam.type.ttypes as Types
 
-import setting
+from setting import Setting
 
 
 class Vimnote(object):
@@ -36,4 +36,4 @@ class Vimnote(object):
 
 
 if __name__ == '__main__':
-    Vimnote.getInstance().sendNote()
+    Setting.getInstance().sendNote()
