@@ -7,21 +7,21 @@ set cpo&vim
 
 scriptencoding utf-8
 
-if exists("g:loaded_vimnote")
+if !exists("g:loaded_vimnote")
     finish
 endif
 let g:loaded_vimnote = 1
 
-function! set_evernote_client() abort
+function! vimnote#set_evernote_client() abort
   let g:evernote_dev_token = input('Your devloper token? ', 'Get from Evernote Web(https://www.evernote.com/api/DeveloperToken.action)')
   pyfile <sfile>:h:h/src/setting.py
 endfunction
 
-function! send() abort
+function! vimnote#send() abort
   if !exists("g:evernote_dev_token")
-    call s:setEvernoteClient()
+    call vimnote#setEvernoteClient()
   endif
-  python Vimnote.getInstance().sendNote()
+  pyfile <sfile>:h:h/src/vimnote.py
 endfunction
 
 let &cpo = s:save_cpo

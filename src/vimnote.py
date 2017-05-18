@@ -33,3 +33,7 @@ class Vimnote(object):
                 note.content += i
         note.content += '</en-note>'
         note = noteStore.createNote(note)
+
+
+if __name__ == '__main__':
+    Vimnote.getInstance().sendNote()
